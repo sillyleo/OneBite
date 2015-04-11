@@ -52,7 +52,7 @@ body {
 
 html {
   font-family: monospace;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.5;
 }
 @media (min-width: 38em) {
@@ -296,6 +296,10 @@ tbody tr:nth-child(odd) th {
   margin-right: auto;
 }
 
+@media (min-width: 38em) {
+  padding-left:  2rem;
+  padding-right: 2rem;
+}
 
 /*
  * Masthead

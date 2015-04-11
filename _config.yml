@@ -1,0 +1,19 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            One Bite
+tagline:          Eat the scroll, sweet as honey.
+url:              http://sillyleo.github.io/OneBite/
+paginate:         100
+baseurl:          /
+author:
+  name:           Leo Lin
+  url:            https://twitter.com/sillyleo
+  email:          leolin@me.com
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/poole/poole

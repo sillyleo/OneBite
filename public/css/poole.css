@@ -40,7 +40,8 @@ body {
   padding: 0; }
 
 html {
-  border-top: 3px solid #eeb60c; }
+  min-height: 100%;
+  border-bottom: 3px solid #eeb60c; }
 
 html {
   font-family: Courier, monospace;

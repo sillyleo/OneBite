@@ -341,6 +341,7 @@ tbody tr:nth-child(odd) th {
 }
 
 footer {
+	text-transform: uppercase;
   color: lighten($body-color,40%);
   a {
   color: lighten($body-color,20%);

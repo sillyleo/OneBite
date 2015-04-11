@@ -23,4 +23,20 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}atom.xml">
+	<script>
+		var refTagger = {
+			settings: {
+				bibleVersion: "ESV",
+				dropShadow: false,			
+				roundCorners: true,
+				socialSharing: [],
+				tooltipStyle: "dark"
+			}
+		};
+		(function(d, t) {
+			var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+			g.src = "//api.reftagger.com/v2/RefTagger.js";
+			s.parentNode.insertBefore(g, s);
+		}(document, "script"));
+	</script>
 </head>

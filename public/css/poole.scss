@@ -44,10 +44,13 @@ $acsent: rgb(191, 97, 106);
           box-sizing: border-box;
 }
 
-html,
 body {
-  margin: 2rem 0;
+  margin: 4rem 0;
   padding: 0;
+}
+
+html {
+	border-top: 3px solid #eeb60c;
 }
 
 html {

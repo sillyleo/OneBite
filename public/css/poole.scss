@@ -2,7 +2,7 @@ $body-color: rgb(34, 34, 34);
 $link-color: black;
 $acsent: #c31d1d;
 $cover: rgba(#eeb60c,0.8);
-$indent: 0;
+$indent: -1.2rem;
 
 /*
  * Body resets
@@ -81,14 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-title, .page-title {
+  color: $acsent;
 	position: relative;
-	text-indent: $indent;
 	margin-bottom: 1rem;
+/*
   &:before {
 	  font-weight: bold;
 	  color: $acsent;
 	  content: "#";
 	}
+*/
 }
 
 /* Body text */
@@ -311,13 +313,19 @@ tbody tr:nth-child(odd) th {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
+	text-indent: $indent;
+	&:before {
+		content: "#";
+		font-weight: bold;
+		color: $acsent;
+	}
 }
 .masthead-title a {
-	color: $acsent;
+	color: gray;
 	text-decoration: none;
 }
 .masthead-title span {
-	color: $body-color;
+	color: gray;
   font-weight: normal;
   letter-spacing: 0;
 }
@@ -352,11 +360,20 @@ footer a {
 .post-title,
 .post-title a,
 .page-title a {
-  color: $body-color;
+  color: $acsent;
   text-decoration: none;
 }
 .page-title,
 .post-title {
+	a {
+		background: none;
+/*
+		background-image: linear-gradient(transparent 94%, $acsent 96%, $acsent 100%);
+		background-origin: padding-box;
+		background-size: auto;
+*/
+
+	}
   margin-top: 0;
 }
 

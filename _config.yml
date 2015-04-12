@@ -7,8 +7,8 @@ title:            咬一口聖經
 tagline:          以西結說，那滋味像蜂蜜般甘甜。
 url:              http://sillyleo.github.io/OneBite/
 paginate:         20
-baseurl:          http://sillyleo.github.io/OneBite/
-# baseurl:          /
+# baseurl:          http://sillyleo.github.io/OneBite/
+baseurl:          /
 author:
   name:           Leo Lin
   url:            https://twitter.com/sillyleo

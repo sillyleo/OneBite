@@ -4,14 +4,18 @@ layout: default
 
 <article class="post">
   <h1 class="post-title">
-    <a href="{{ page.url }}">
+    <a href="{{ page.url }}" title="{{ page.date | date: "%-m/%-d/%Y"}}">
       {{ page.title }}
     </a>
   </h1>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">{{ page.date | date_to_string }}</time>
   {{ content }}
+	<br />	
+	<div class="meta">
+		+ Date: {{ page.date | date: "%-m/%-d/%Y"}} + Size: {{ page.content | size }} +
+		</div>
 </article>
 
+<!--
 <aside class="related">
   <h2>相關文章</h2>
   <ul class="related-posts">
@@ -26,3 +30,4 @@ layout: default
     {% endfor %}
   </ul>
 </aside>
+-->

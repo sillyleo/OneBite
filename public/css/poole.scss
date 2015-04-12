@@ -1,37 +1,8 @@
-/*
- *                        ___
- *                       /\_ \
- *  _____     ___     ___\//\ \      __
- * /\ '__`\  / __`\  / __`\\ \ \   /'__`\
- * \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
- *  \ \ ,__/\ \____/\ \____//\____\ \____\
- *   \ \ \/  \/___/  \/___/ \/____/\/____/
- *    \ \_\
- *     \/_/
- *
- * Designed, built, and released under MIT license by @mdo. Learn more at
- * https://github.com/poole/poole.
- */
-
-
-/*
- * Contents
- *
- * Body resets
- * Custom type
- * Messages
- * Container
- * Masthead
- * Posts and pages
- * Pagination
- * Reverse layout
- * Themes
- */
-
-$body-color: lighten(#333, 10%);
+$body-color: rgb(34, 34, 34);
 $link-color: black;
-$acsent: rgb(191, 97, 106);
+$acsent: #c31d1d;
 $cover: rgba(#eeb60c,0.8);
+$indent: 0;
 
 /*
  * Body resets
@@ -46,24 +17,27 @@ $cover: rgba(#eeb60c,0.8);
 }
 
 body {
-  margin: 4rem 0;
+  margin: 2rem 0;
   padding: 0;
 }
 
 html {
 	min-height: 100%;
+/*
 	border-top: 3px solid $cover;
 	border-bottom: 3px solid $cover;
+*/
 }
 
 html {
-  font-family: monospace;
+  font-family: 'Source Code Pro',monospace;
   font-size: 17px;
   line-height: 1.5;
+	letter-spacing: .015rem;
 }
 @media (min-width: 38em) {
   html {
-    font-size: 21px;
+    font-size: 20px;
   }
 }
 
@@ -94,23 +68,24 @@ a strong {
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
-  text-decoration: underline;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0rem;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.5;
   color: darken($body-color, 20%);
   font-size: 1rem;
   margin-top: 1rem;
 }
 
-.post-title {
+.post-title, .page-title {
 	position: relative;
-	text-indent: -1.2rem;
+	text-indent: $indent;
+	margin-bottom: 1rem;
   &:before {
+	  font-weight: bold;
 	  color: $acsent;
 	  content: "#";
 	}
@@ -127,22 +102,29 @@ strong {
 }
 
 .post a.rtBibleRef, .page a.rtBibleRef {
-	color: $body-color;
-	border-bottom: 2px dotted lighten($body-color, 40%);
-	text-decoration: none;
-	&:hover {
-		text-decoration: none;
+	&:after {
+		content: "⁺";
 	}
 }
 
 /* Lists */
 ul, ol, dl {
+	padding-left: 	0;
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
+ul li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	&:before {
+		content: "- ";
+	}	
+}
+
 dt {
-  font-weight: bold;
+  font-weight: normal;
 }
 dd {
   margin-bottom: .5rem;
@@ -160,7 +142,7 @@ hr {
 
 abbr {
   font-size: 85%;
-  font-weight: bold;
+  font-weight: normal;
   color: lighten($body-color, 20%);
   text-transform: uppercase;
 }
@@ -186,7 +168,7 @@ pre {
   margin-bottom: 1rem;
   padding: 1rem;
   font-size: .8rem;
-  line-height: 1.5;
+  line-height: 1;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
@@ -232,7 +214,7 @@ pre code {
 /* Quotes */
 blockquote {
   padding: 0rem 1rem;
-  margin: .8rem 0;
+  margin: 1rem 0;
   border-left: .15rem solid lighten($body-color,60%);
 }
 blockquote p:last-child {
@@ -278,7 +260,7 @@ tbody tr:nth-child(odd) th {
 
 .lead {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 
@@ -303,9 +285,9 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 32rem;
+  max-width: 34rem;
   padding-left:  1.5rem;
-  padding-right: 0.5rem;
+  padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
 }
@@ -324,30 +306,20 @@ tbody tr:nth-child(odd) th {
 .masthead {
   padding-top:    1rem;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: $acsent;
 }
 .masthead-title a {
-  color: $acsent;
+	color: $acsent;
 	text-decoration: none;
 }
 .masthead-title span {
-  font-weight: 400;
-  color: lighten($body-color,40%);
+	color: $body-color;
+  font-weight: normal;
   letter-spacing: 0;
-}
-
-footer {
-	text-transform: uppercase;
-  color: lighten($body-color,40%);
-  a {
-  color: lighten($body-color,20%);
-  text-decoration: underline;
-  }
 }
 
 
@@ -362,16 +334,25 @@ footer {
 .post {
   margin-bottom: 4em;
 	a {
-		text-decoration: underline;
+		background-image: linear-gradient(transparent 94%, rgb(34, 34, 34) 96%, rgb(34, 34, 34) 100%);
+		background-origin: padding-box;
+		background-size: auto;
 	}
+}
+
+footer a {
+		background-image: linear-gradient(transparent 94%, rgb(34, 34, 34) 96%, rgb(34, 34, 34) 100%);
+		background-origin: padding-box;
+		background-size: auto;
+	
 }
 
 /* Blog post or page title */
 .page-title,
 .post-title,
-.post-title a {
-  color: #303030;
-  text-transform: uppercase;
+.post-title a,
+.page-title a {
+  color: $body-color;
   text-decoration: none;
 }
 .page-title,
@@ -381,16 +362,16 @@ footer {
 
 /* Meta data line below post title */
 .post-date, .page-date {
-  display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  float: right;
   font-weight: normal;
-  color: lighten($body-color, 40%);
+//   color: lighten($body-color, 40%);
 }
 
 /* Related posts */
 .related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-top: 1px solid #eee;
 }
 .related-posts {
@@ -401,7 +382,7 @@ footer {
   margin-top: 0;
   color: $body-color;
   text-transform: uppercase;
-	text-indent: -1.2rem;
+	text-indent: $indent;
 	&:before {
 	  color: lighten($body-color, 40%);
 		content: "#";
@@ -410,6 +391,10 @@ footer {
 .related-posts li a:hover {
   color: $link-color;
   text-decoration: none;
+}
+
+.meta {
+	color: lighten($body-color, 50%);
 }
 
 
@@ -422,11 +407,17 @@ footer {
 
 .pagination {
   overflow: hidden;
+	a {
+			background-image: linear-gradient(transparent 94%, rgb(34, 34, 34) 96%, rgb(34, 34, 34) 100%);
+		background-origin: padding-box;
+		background-size: auto;
+	
+	}
 }
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-  display: block;
+  display: inline-block;
 }
 
 .newer {
@@ -450,6 +441,6 @@ span.pagination-item.older, span.pagination-item.newer {
 
 @media (min-width: 30em) {
   .pagination {
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
 }

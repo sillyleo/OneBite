@@ -1,4 +1,4 @@
-$body-color: rgb(34, 34, 34);
+$body-color: rgb(66, 66, 66);
 $link-color: black;
 $acsent: #c31d1d;
 $cover: rgba(#eeb60c,0.8);
@@ -72,8 +72,8 @@ a:focus {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0rem;
-  font-weight: normal;
+  margin-bottom: 1rem;
+  font-weight: bold;
   line-height: 1.5;
   color: darken($body-color, 20%);
   font-size: 1rem;
